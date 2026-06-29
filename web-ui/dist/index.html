@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#FF8200" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="FlipperDIY" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" type="image/png" href="./favicon.png" />
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+  <title>FlipperDIY</title>
+  <script type="module" crossorigin src="./assets/index-BaMPF2RF.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CmcubQXv.css">
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    // Registra o service worker para uso offline (PWA)
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => console.log('SW registrado:', reg.scope))
+          .catch(err => console.log('SW falhou:', err));
+      });
+    }
+  </script>
+</body>
+</html>
